@@ -8,16 +8,16 @@ const INCREMENT = "increment";
 const DECREMENT = "decrement";
 
 // Action creator
-const increment = () => {
+const increment = (value) => {
   return {
     type: INCREMENT,
-    payload: 5,
+    payload: value,
   };
 };
-const decrement = () => {
+const decrement = (value) => {
   return {
     type: DECREMENT,
-    payload: 3,
+    payload: value,
   };
 };
 
@@ -66,8 +66,8 @@ store.subscribe(getAndSetValue);
 // Add listener to button
 // Add action payload
 incrementEl.addEventListener("click", () => {
-  store.dispatch(increment());
+  store.dispatch(increment(5));
 });
 decrementEl.addEventListener("click", () => {
-  store.dispatch(decrement());
+  store.dispatch(decrement(3));
 });
